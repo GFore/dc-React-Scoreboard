@@ -38,25 +38,79 @@ class App extends Component {
     return cards;
   }
 
-  //Version 1: use .map to manually construct replacement
+//Version 0:
   _incrementScoreById(id){
-    // find the player in this.state.score
-    // increment their score
+    // find the player in this.state.score and increment their score
     const newScores = this.state.scores.map(score => {
-      if(score.id !== id) {return score}
-      else {
-        return {
-          id: score.id,
-          name: score.name,
-          score: score.score+1
-        }
+      // only change the score for the matching id
+      if(score.id === id) {
+        score.score += 1;
       }
+      return score;
     });
-    // call this.setState
+
     this.setState({
       scores: newScores
     })
   }
+
+
+
+  //Version 1: use .map to manually construct replacement
+  // _incrementScoreById(id){
+  //   // find the player in this.state.score
+  //   // increment their score
+  //   const newScores = this.state.scores.map(score => {
+  //     if(score.id !== id) {return score}
+  //     else {
+  //       return {
+  //         id: score.id,
+  //         name: score.name,
+  //         score: score.score+1
+  //       }
+  //     }
+  //   });
+  //   // call this.setState
+  //   this.setState({
+  //     scores: newScores
+  //   })
+  // }
+
+
+  //Version 2: use .map and copy values out of the original
+//     _incrementScoreById(id){
+//       // find the player in this.state.score
+//       // increment their score
+//       const newScores = this.state.scores.map(scr => {
+//         if(scr.id !== id) {return scr}
+//         else {
+//           return {...scr, 
+//             score: scr.score+1,
+//           }
+//         }
+//       });
+//       // call this.setState
+//       this.setState({
+//         scores: newScores
+//       })
+//     }
+
+// //Version 3: use .map with ternary
+// _incrementScoreById(id){
+//   // find the player in this.state.score
+//   // increment their score
+//   const newScores = this.state.scores.map(scr => {
+//     scr.id !== id ? scr : {...scr, 
+//       score: scr.score+1,
+//     }
+//     }
+//   );
+//   // call this.setState
+//   this.setState({
+//     scores: newScores
+//   })
+// }
+
 
 }
 
