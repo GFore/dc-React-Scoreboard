@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
+import ScoreCard from './Scorecard';
 
 class App extends Component {
   constructor(props) {    //not really needed since it's top level, just here for practice
@@ -29,11 +30,16 @@ class App extends Component {
   _scoresAsCards(){
     const cards = this.state.scores.map(score => {
       return (
-        <div key={score.id}>
-          <h2>Name: {score.name} || Score: {score.score}</h2>
-          <button onClick={() => this._incrementScoreById(score.id)}>+</button>
-        </div>
-      )
+        <ScoreCard
+          key = {score.id}
+          id = {score.id}
+          name = {score.name}
+          score = {score.score}
+          incScore={x => this._incrementScoreById(x)}
+          decScore={e => this._decrementScoreById(e)}
+        />
+       
+      );
     });
     return cards;
   }
@@ -45,6 +51,21 @@ class App extends Component {
       // only change the score for the matching id
       if(score.id === id) {
         score.score += 1;
+      }
+      return score;
+    });
+
+    this.setState({
+      scores: newScores
+    })
+  }
+
+  _decrementScoreById(id){
+    // find the player in this.state.score and increment their score
+    const newScores = this.state.scores.map(score => {
+      // only change the score for the matching id
+      if(score.id === id) {
+        score.score -= 1;
       }
       return score;
     });

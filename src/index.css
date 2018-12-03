@@ -12,3 +12,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.flexor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  height: 20px;
+  margin: 3px
+}
