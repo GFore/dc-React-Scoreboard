@@ -2,14 +2,9 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,8 +13,19 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Exercise {
+  padding: 10px 0 20px;
+  margin: 20px 0;
+}
+
+.Exercise h2 {
+  font-size: 2em;
+
+}
+
+.evenEx {
+  background-color: #282c34;
+  color: white;
 }
 
 .time-container {
@@ -44,11 +50,16 @@
   text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.talky {
+  margin-left: 40%;
+  margin-bottom: 10px;
+  /* width: 66%; */
+  text-align: left
+}
+
+.talky input, .talky span {
+  border: none;
+  border-bottom: solid 1px lightgray;
+  width: 40%;
+  font-size: 1.2em;
 }
