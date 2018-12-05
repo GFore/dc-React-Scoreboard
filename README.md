@@ -13,6 +13,16 @@ The app opens with a default list of players and their scores.
 - click `Add Player` to add a new player (will be prompted for name and score)
 - click `Reset` to reset to the original default list
 
+## SMALL REACT EXERCISES
+### 1) Timestamp Button
+ASSIGNMENT:
+- Show the user a button
+- When they click, add the current timestamp to an unordered list
+
+STRETCH:
+- Click a timestamp to delete it
+- Add a Reset button that clears list and adds current timestamp
+
 
 ## Learn More
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

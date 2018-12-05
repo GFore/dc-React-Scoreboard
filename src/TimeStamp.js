@@ -8,7 +8,7 @@ const TimeStamp = props => {
           <li 
             key={item.id} 
             className="single-timestamp"
-            // onClick={() => props.handleClick(item.id)}
+            onClick={() => props.handleClick(item.id)}
           >{item.timestamp}</li>
         );
       })}

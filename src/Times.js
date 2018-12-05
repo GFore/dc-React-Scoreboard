@@ -15,6 +15,7 @@ class Times extends Component {
         <div className="time-container">
             <TimeStamp
                 timestamps={this.state.timestamps}
+                handleClick={this._deleteTimestamp}
             />
             <div>
                 <button onClick={() => this._newTime()}>Save Time</button>
@@ -26,12 +27,24 @@ class Times extends Component {
 
 
   _newTime(){
+      //determine the new ID by adding one to the last ID. If no scores exist, then set ID to 1
+      const newID = this.state.timestamps.length > 0
+              ? this.state.timestamps[this.state.timestamps.length-1].id + 1
+              : 0;
+
       const newTime = new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString();
-      const newID = this.state.timestamps[this.state.timestamps.length-1].id + 1;
       this.setState({
         timestamps: [...this.state.timestamps, {id: newID, timestamp: newTime}]
       });
   }
+
+  _deleteTimestamp = (idToDelete) => {
+    console.log(this);
+
+    this.setState({
+        timestamps: this.state.timestamps.filter(item => item.id !== idToDelete)
+      });
+    }
 
   _resetTime(){
     this.setState({
