@@ -19,6 +19,7 @@ class Scores extends Component {
           {this._scoresAsCards()}
           <Buttons 
             addPerson={() => this._addPlayer()}
+            resetScores={() => this._reset()}
           />
         </div>
     );
@@ -33,6 +34,7 @@ class Scores extends Component {
           name = {score.name}
           score = {score.score}
           changeScore={(id, delta) => this._changeScoreById(id, delta)}
+          removeScore={(id) => this._removeScoreById(id)}
         />
       );
     });
@@ -54,15 +56,39 @@ class Scores extends Component {
     })
   }
 
+  _removeScoreById(id){
+    // find the player in this.state.score and increment their score
+    const newScores = this.state.scores.filter(score => score.id !== id);
+
+    this.setState({
+      scores: newScores
+    })
+  }
+
 
   _addPlayer(){
+    //determine the new ID by adding one to the last ID. If no scores exist, then set ID to 1
+    const newID = this.state.scores.length > 0
+        ? this.state.scores[this.state.scores.length-1].id + 1
+        : 1;
+
     const newPlayer = {
-        id: this.state.scores.length+1,
+        id: newID,
         name: prompt("Name: "),
         score: Number(prompt("Score: "))
     };
     this.setState({
       scores: [...this.state.scores, newPlayer]
+    })
+  }
+
+  _reset(){  
+    this.setState({
+        scores: [
+            {id: 1, name: "Cindy",  score: 1001},
+            {id: 2, name: "Loo",  score: 20},
+            {id: 3, name: "Who",  score: 500}
+        ]
     })
   }
 
