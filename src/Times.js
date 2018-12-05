@@ -16,7 +16,10 @@ class Times extends Component {
             <TimeStamp
                 timestamps={this.state.timestamps}
             />
-            <button onClick={() => this._newTime()}>Save Time</button>
+            <div>
+                <button onClick={() => this._newTime()}>Save Time</button>
+                <button onClick={() => this._resetTime()}>Reset</button>
+            </div>
         </div>
     );
   }
@@ -28,6 +31,15 @@ class Times extends Component {
       this.setState({
         timestamps: [...this.state.timestamps, {id: newID, timestamp: newTime}]
       });
+  }
+
+  _resetTime(){
+    this.setState({
+        timestamps: [{
+                    id: 0,
+                    timestamp: new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString()
+                    }]
+    });
   }
 }
 
