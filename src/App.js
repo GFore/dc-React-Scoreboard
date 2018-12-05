@@ -35,8 +35,7 @@ class App extends Component {
           id = {score.id}
           name = {score.name}
           score = {score.score}
-          incScore={x => this._incrementScoreById(x)}
-          decScore={e => this._decrementScoreById(e)}
+          changeScore={(id, delta) => this._changeScoreById(id, delta)}
         />
        
       );
@@ -44,13 +43,12 @@ class App extends Component {
     return cards;
   }
 
-//Version 0:
-  _incrementScoreById(id){
+  _changeScoreById(id, scoreDelta){
     // find the player in this.state.score and increment their score
     const newScores = this.state.scores.map(score => {
       // only change the score for the matching id
       if(score.id === id) {
-        score.score += 1;
+        score.score += scoreDelta;    //scoreDelta is 1 for increasing score, or -1 for decreasing score
       }
       return score;
     });
@@ -59,96 +57,7 @@ class App extends Component {
       scores: newScores
     })
   }
-
-  _decrementScoreById(id){
-    // find the player in this.state.score and increment their score
-    const newScores = this.state.scores.map(score => {
-      // only change the score for the matching id
-      if(score.id === id) {
-        score.score -= 1;
-      }
-      return score;
-    });
-
-    this.setState({
-      scores: newScores
-    })
-  }
-
-
-
-  //Version 1: use .map to manually construct replacement
-  // _incrementScoreById(id){
-  //   // find the player in this.state.score
-  //   // increment their score
-  //   const newScores = this.state.scores.map(score => {
-  //     if(score.id !== id) {return score}
-  //     else {
-  //       return {
-  //         id: score.id,
-  //         name: score.name,
-  //         score: score.score+1
-  //       }
-  //     }
-  //   });
-  //   // call this.setState
-  //   this.setState({
-  //     scores: newScores
-  //   })
-  // }
-
-
-  //Version 2: use .map and copy values out of the original
-//     _incrementScoreById(id){
-//       // find the player in this.state.score
-//       // increment their score
-//       const newScores = this.state.scores.map(scr => {
-//         if(scr.id !== id) {return scr}
-//         else {
-//           return {...scr, 
-//             score: scr.score+1,
-//           }
-//         }
-//       });
-//       // call this.setState
-//       this.setState({
-//         scores: newScores
-//       })
-//     }
-
-// //Version 3: use .map with ternary
-// _incrementScoreById(id){
-//   // find the player in this.state.score
-//   // increment their score
-//   const newScores = this.state.scores.map(scr => {
-//     scr.id !== id ? scr : {...scr, 
-//       score: scr.score+1,
-//     }
-//     }
-//   );
-//   // call this.setState
-//   this.setState({
-//     scores: newScores
-//   })
-// }
-
 
 }
 
 export default App;
-
-// Removed this code from div.App
-/* <header className="App-header">
-  <img src={logo} className="App-logo" alt="logo" />
-  <p>
-    Edit <code>src/App.js</code> and save to reload.
-  </p>
-  <a
-    className="App-link"
-    href="https://reactjs.org"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Learn React
-  </a>
-</header> */
