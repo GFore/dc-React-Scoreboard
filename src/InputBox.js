@@ -7,7 +7,7 @@ function InputBox(props) {
           <input
             className="talky-text"
             value={props.term}
-            onChange={props.onChange}
+            onChange={(event) => props.changeHandler(event.target.value)}
             placeholder="Type here"
           />
           {/* <button type="submit">add</button> */}

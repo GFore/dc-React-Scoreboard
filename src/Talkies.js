@@ -14,7 +14,7 @@ class Talkies extends Component {
         <div>
             <InputBox
                 term={this.state.term}
-                onChange={(event) => this._onChange(event.target.value)}
+                changeHandler={this._onChange}
             />
             <OutputBox
                 outType="Output"

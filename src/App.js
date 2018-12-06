@@ -3,6 +3,7 @@ import './App.css';
 import Scores from './Scores';
 import Times from './Times';
 import Talkies from './Talkies';
+import CoffeeRuns from './CoffeeRuns';
 
 class App extends Component {
   render() {
@@ -20,6 +21,10 @@ class App extends Component {
         <div className="Exercise">
           <h2>Small #2 - Walky Talky</h2>
           <Talkies />
+        </div>
+        <div className="Exercise evenEx">
+          <h2>Medium #1 - CoffeeRun!</h2>
+          <CoffeeRuns />
         </div>
       </div>
     );
