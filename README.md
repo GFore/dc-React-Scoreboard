@@ -1,7 +1,7 @@
 
 
-## My First React Project! A Simple Scoreboard
-
+# My First React Projects!
+## A Simple Scoreboard
 Run from the project directory using `npm start`
 
 The app opens with a default list of players and their scores.
@@ -13,6 +13,7 @@ The app opens with a default list of players and their scores.
 - click `Add Player` to add a new player (will be prompted for name and score)
 - click `Reset` to reset to the original default list
 
+
 ## SMALL REACT EXERCISES
 ### 1) Timestamp Button
 ASSIGNMENT:
@@ -23,6 +24,19 @@ STRETCH:
 - Click a timestamp to delete it
 - Add a Reset button that clears list and adds current timestamp
 
+
+### 2) Walky Talky
+ASSIGNMENT:
+- Show user a text input and a div
+- As the user types in the text input, the text appears in the div
+- Use three components:
+  - InputBox
+  - OutputBox
+  - TranslationApp (that wraps around the other two components)
+
+STRETCH:
+- Upper-caser: as the user types, make the output show the text in upper case
+- Leet-speaker: as the user types, make the output show the text in leet speak
 
 ## Learn More
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
