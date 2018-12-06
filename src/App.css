@@ -54,12 +54,23 @@
   margin-left: 40%;
   margin-bottom: 10px;
   /* width: 66%; */
-  text-align: left
+  text-align: left;
+  display: flex;
+  align-items: center;
 }
 
-.talky input, .talky span {
+.talky input {
   border: none;
   border-bottom: solid 1px lightgray;
-  width: 40%;
+}
+
+.talky-label {
+  width: 60px;
+}
+
+.talky-text {
+  border-bottom: solid 1px lightgray;
+  width: 300px;
+  height: 1.3em;
   font-size: 1.2em;
 }

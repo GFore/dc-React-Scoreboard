@@ -17,9 +17,17 @@ class Talkies extends Component {
                 onChange={(event) => this._onChange(event.target.value)}
             />
             <OutputBox
+                outType="Output"
                 term={this.state.term}
             />
-
+            <OutputBox
+                outType="Upper"
+                term={this.state.term.toUpperCase()}
+            />
+            <OutputBox
+                outType="Leet"
+                term={this.state.term.toUpperCase()}
+            />
         </div>
     );
   }
