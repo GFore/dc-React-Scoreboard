@@ -39,8 +39,6 @@ class Times extends Component {
   }
 
   _deleteTimestamp = (idToDelete) => {
-    console.log(this);
-
     this.setState({
         timestamps: this.state.timestamps.filter(item => item.id !== idToDelete)
       });
