@@ -28,6 +28,7 @@ class Talkies extends Component {
                 outType="Leet"
                 term={this.state.term.toUpperCase()}
             />
+            <button onClick={() => this._resetAll()}>Reset</button>
         </div>
     );
   }
@@ -36,7 +37,13 @@ class Talkies extends Component {
     this.setState({
       term: userInput
     });
-  };
+  }
+
+  _resetAll(){
+    this.setState({
+      term: ""
+    });
+  }
 
 }
 
