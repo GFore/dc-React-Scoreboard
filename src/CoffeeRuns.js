@@ -30,5 +30,3 @@ class CoffeeRuns extends Component {
 }
 
 export default CoffeeRuns;
-
-

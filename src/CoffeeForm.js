@@ -15,7 +15,6 @@ class CoffeeForm extends Component {
   render() {
     return (  
         <div>
-            {/* <form action="https://dc-coffeerun.herokuapp.com/api/coffeeOrders" method="POST" data-form> */}
             <form onSubmit={this._handleSubmit}>
             <fieldset >
                 <legend> PLACE YOUR ORDER</legend>
