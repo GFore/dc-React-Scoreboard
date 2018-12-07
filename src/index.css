@@ -154,7 +154,9 @@ thead {
   font-style: italic;
   font-weight: bolder;
 }
-
-tbody {
-  overflow: scroll;
+fieldset {
+  /* max-height: 220px;
+  overflow: scroll; */
+  margin: 5px;
+  padding: 10px;
 }

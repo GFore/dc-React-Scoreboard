@@ -84,7 +84,6 @@ class CoffeeForm extends Component {
                         <button onClick={(event) => this._handleReset(event)}>Reset</button>
                     </div>
                 </div>
-                <br />
 
             </fieldset>
             </form>
