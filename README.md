@@ -38,6 +38,15 @@ STRETCH:
 - Upper-caser: as the user types, make the output show the text in upper case
 - Leet-speaker: as the user types, make the output show the text in leet speak
 
+## MEDIUM REACT EXERCISES
+### 1) CoffeeRun!
+re-create the CoffeeRun front-end app as React components
+(CoffeeRun is a simple form app for taking and displaying orders in a coffee shop)
+
+### 2) CoffeeRun with Ajax
+Once you have completed the components, have the app communicate with the CoffeeRun API
+
+
 ## Learn More
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
