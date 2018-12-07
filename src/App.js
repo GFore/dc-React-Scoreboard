@@ -4,6 +4,7 @@ import Scores from './Scores';
 import Times from './Times';
 import Talkies from './Talkies';
 import CoffeeRuns from './CoffeeRuns';
+import CoffeeRunsAPI from './CoffeeRunsAPI';
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
         <Times />
         <Talkies />
         <CoffeeRuns />
+        <CoffeeRunsAPI />
       </div>
     );
   }

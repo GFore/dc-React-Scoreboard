@@ -4,13 +4,14 @@ class CoffeeForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      formCoffee: "",
-      formEmail: "",
-      formFlavor: "",
-      formSize: "",
-      formStrength: ""
+      coffee: "",
+      emailAddress: "",
+      flavor: "",
+      size: "",
+      strength: ""
     }
   }
+
   render() {
     return (  
         <div>
@@ -23,8 +24,8 @@ class CoffeeForm extends Component {
                     <input
                         id="coffee"
                         className="cof-text"
-                        value={this.state.formCoffee}
-                        onChange={(event) => this._onChange("formCoffee", event.target.value)}
+                        value={this.state.coffee}
+                        onChange={(event) => this._onChange("coffee", event.target.value)}
                         placeholder="Enter coffee name"
                         type="text"
                     />
@@ -35,8 +36,8 @@ class CoffeeForm extends Component {
                     <input
                         id="email"
                         className="cof-text"
-                        value={this.state.formEmail}
-                        onChange={(event) => this._onChange("formEmail", event.target.value)}
+                        value={this.state.emailAddress}
+                        onChange={(event) => this._onChange("emailAddress", event.target.value)}
                         placeholder="Enter your email"
                         type="email"
                     />
@@ -47,8 +48,8 @@ class CoffeeForm extends Component {
                     <input
                         id="flavor"
                         className="cof-text"
-                        value={this.state.formFlavor}
-                        onChange={(event) => this._onChange("formFlavor", event.target.value)}
+                        value={this.state.flavor}
+                        onChange={(event) => this._onChange("flavor", event.target.value)}
                         placeholder="Enter coffee flavor"
                         type="text"
                     />
@@ -59,8 +60,8 @@ class CoffeeForm extends Component {
                     <input
                         id="size"
                         className="cof-text"
-                        value={this.state.formSize}
-                        onChange={(event) => this._onChange("formSize", event.target.value)}
+                        value={this.state.size}
+                        onChange={(event) => this._onChange("size", event.target.value)}
                         placeholder="Enter coffee size"
                         type="text"
                     />
@@ -72,8 +73,8 @@ class CoffeeForm extends Component {
                         <input
                             id="strength"
                             className="cof-num"
-                            value={this.state.formStrength}
-                            onChange={(event) => this._onChange("formStrength", event.target.value)}
+                            value={this.state.strength}
+                            onChange={(event) => this._onChange("strength", event.target.value)}
                             type="number"
                             min="0"
                             max="100"
@@ -105,11 +106,11 @@ class CoffeeForm extends Component {
 
     _handleReset = () => {
         this.setState({
-            formCoffee: "",
-            formEmail: "",
-            formFlavor: "",
-            formSize: "",
-            formStrength: ""
+            coffee: "",
+            emailAddress: "",
+            flavor: "",
+            size: "",
+            strength: ""
           });
     }
 

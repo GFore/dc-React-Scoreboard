@@ -8,7 +8,7 @@ const CoffeeList = (props) => {
                 <thead>
                     <tr>
                         <td>Coffee</td>
-                        <td>Email</td>
+                        <td>Email Address</td>
                         <td>Flavor</td>
                         <td>Size</td>
                         <td>Strength</td>
@@ -18,11 +18,11 @@ const CoffeeList = (props) => {
                     {props.orders.map((item, index) => {
                         return (
                                 <tr key={index}>
-                                    <td>{item.formCoffee}</td>
-                                    <td>{item.formEmail}</td>
-                                    <td>{item.formFlavor}</td>
-                                    <td>{item.formSize}</td>
-                                    <td>{item.formStrength}</td>
+                                    <td>{item.coffee}</td>
+                                    <td>{item.emailAddress}</td>
+                                    <td>{item.flavor}</td>
+                                    <td>{item.size}</td>
+                                    <td>{item.strength}</td>
                                 </tr>
                         );            
                     })}
