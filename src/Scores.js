@@ -14,7 +14,9 @@ class Scores extends Component {
     }
   }
   render() {
-    return (  
+    return (
+      <div className="Exercise">
+        <h2>Scoreboard App</h2>
         <div className="score-container">
           {this._scoresAsCards()}
           <Buttons 
@@ -22,6 +24,7 @@ class Scores extends Component {
             resetScores={() => this._reset()}
           />
         </div>
+      </div>
     );
   }
 

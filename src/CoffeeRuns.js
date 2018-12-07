@@ -15,7 +15,8 @@ class CoffeeRuns extends Component {
   }
   render() {
     return (  
-        <div className="time-container">
+        <div className="Exercise evenEx">
+            <h2>Medium #1 - CoffeeRun!</h2>
             <form action="https://dc-coffeerun.herokuapp.com/api/coffeeOrders" method="POST" data-form>
             <fieldset >
                 <legend> PLACE YOUR ORDER</legend>

@@ -11,7 +11,9 @@ class Times extends Component {
     }
   }
   render() {
-    return (  
+    return (
+      <div className="Exercise evenEx">
+        <h2>Small #1 - Timestamp Button</h2>
         <div className="time-container">
             <TimeStamp
                 timestamps={this.state.timestamps}
@@ -22,6 +24,7 @@ class Times extends Component {
                 <button onClick={() => this._resetTime()}>Reset</button>
             </div>
         </div>
+      </div>
     );
   }
 
