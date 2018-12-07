@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CoffeeForm from './CoffeeForm';
-// import TimeStamp from './TimeStamp';
+import CoffeeList from './CoffeeList';
 
 class CoffeeRuns extends Component {
   constructor(props) {
@@ -13,10 +13,18 @@ class CoffeeRuns extends Component {
     return (  
         <div className="Exercise evenEx">
             <h2>Medium #1 - CoffeeRun!</h2>
-            <CoffeeForm />
-            
+            <div className="coffeeRunContainer">
+                <CoffeeForm handleSubmit={this._submitOrder} />
+                <CoffeeList orders={this.state.orders} />
+            </div>
         </div>
     );
+  }
+
+  _submitOrder = (order) => {
+      this.setState({
+        orders: [...this.state.orders, order]
+      });
   }
 
 }

@@ -14,14 +14,15 @@ class CoffeeForm extends Component {
   render() {
     return (  
         <div>
-            <form action="https://dc-coffeerun.herokuapp.com/api/coffeeOrders" method="POST" data-form>
+            {/* <form action="https://dc-coffeerun.herokuapp.com/api/coffeeOrders" method="POST" data-form> */}
+            <form onSubmit={this._handleSubmit}>
             <fieldset >
                 <legend> PLACE YOUR ORDER</legend>
-                <div className="talky">
-                    <label className="talky-label" htmlFor="coffee">Coffee: </label>  
+                <div className="cof">
+                    <label className="cof-label" htmlFor="coffee">Coffee: </label>  
                     <input
                         id="coffee"
-                        className="talky-text"
+                        className="cof-text"
                         value={this.state.formCoffee}
                         onChange={(event) => this._onChange("formCoffee", event.target.value)}
                         placeholder="Enter coffee name"
@@ -29,11 +30,11 @@ class CoffeeForm extends Component {
                     />
                     <br />
                 </div>
-                <div className="talky">
-                    <label className="talky-label" htmlFor="email">Email: </label>  
+                <div className="cof">
+                    <label className="cof-label" htmlFor="email">Email: </label>  
                     <input
                         id="email"
-                        className="talky-text"
+                        className="cof-text"
                         value={this.state.formEmail}
                         onChange={(event) => this._onChange("formEmail", event.target.value)}
                         placeholder="Enter your email"
@@ -41,11 +42,11 @@ class CoffeeForm extends Component {
                     />
                     <br />
                 </div>
-                <div className="talky">
-                    <label className="talky-label" htmlFor="flavor">Flavor: </label>  
+                <div className="cof">
+                    <label className="cof-label" htmlFor="flavor">Flavor: </label>  
                     <input
                         id="flavor"
-                        className="talky-text"
+                        className="cof-text"
                         value={this.state.formFlavor}
                         onChange={(event) => this._onChange("formFlavor", event.target.value)}
                         placeholder="Enter coffee flavor"
@@ -53,11 +54,11 @@ class CoffeeForm extends Component {
                     />
                     <br />
                 </div>
-                <div className="talky">
-                    <label className="talky-label" htmlFor="size">Size: </label>  
+                <div className="cof">
+                    <label className="cof-label" htmlFor="size">Size: </label>  
                     <input
                         id="size"
-                        className="talky-text"
+                        className="cof-text"
                         value={this.state.formSize}
                         onChange={(event) => this._onChange("formSize", event.target.value)}
                         placeholder="Enter coffee size"
@@ -66,11 +67,11 @@ class CoffeeForm extends Component {
                     <br />
                 </div>
                 <div className="coffeeRunFormButtons">
-                    <div className="strength">
-                        <label className="talky-label" htmlFor="strength">Strength: </label>  
+                    <div className="cof-strength">
+                        <label className="cof-label" htmlFor="strength">Strength: </label>  
                         <input
                             id="strength"
-                            className="talky-num"
+                            className="cof-num"
                             value={this.state.formStrength}
                             onChange={(event) => this._onChange("formStrength", event.target.value)}
                             type="number"
@@ -79,7 +80,7 @@ class CoffeeForm extends Component {
                             />
                     </div>
                     <div className="btnGroup">
-                        <button onClick={() => this._handleSubmit()}>Submit</button>
+                        <button>Submit</button>
                         <button onClick={(event) => this._handleReset(event)}>Reset</button>
                     </div>
                 </div>
@@ -97,8 +98,13 @@ class CoffeeForm extends Component {
         });
     };
 
-    _handleReset = (e) => {
+    _handleSubmit = (e) => {
         e.preventDefault();
+        this.props.handleSubmit(this.state);
+        this._handleReset();
+    }
+
+    _handleReset = () => {
         this.setState({
             formCoffee: "",
             formEmail: "",

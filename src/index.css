@@ -65,23 +65,6 @@ button {
   text-align: center;
 }
 
-.coffeeRunFormButtons{
-  margin-left: 40%;
-  margin-bottom: 10px;
-  text-align: left;
-  display: flex;
-  align-items: center;
-}
-
-.coffeeRunFormButtons .btnGroup{
-  margin-left: 40px;
-}
-
-.strength {
-  display: flex;
-  align-items: center
-}
-
 .talky {
   margin-left: 40%;
   margin-bottom: 10px;
@@ -107,11 +90,71 @@ button {
   font-size: 1.2em;
 }
 
-.talky-num {
+.coffeeRunContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; 
+}
+
+.cof {
+  margin-left: 5%;
+  margin-bottom: 10px;
+  /* width: 66%; */
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.cof input {
+  border: none;
+  border-bottom: solid 1px lightgray;
+}
+
+.cof-label {
+  width: 60px;
+}
+
+.cof-text {
+  border-bottom: solid 1px lightgray;
+  width: 300px;
+  height: 1.3em;
+  font-size: 1.2em;
+}
+
+.coffeeRunFormButtons{
+  margin-bottom: 10px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.coffeeRunFormButtons .btnGroup {
+  margin-left: 40px;
+}
+
+.cof-strength {
+  display: flex;
+  align-items: center
+}
+
+.cof-num {
   border-bottom: solid 1px lightgray;
   width: 50px;
   height: 1.3em;
   font-size: 1.2em;
   margin-left: 20px;
   margin-right: 20px;
+}
+
+td:nth-child(1), td:nth-child(2) {
+  text-align: left;
+}
+
+thead {
+  font-style: italic;
+  font-weight: bolder;
+}
+
+tbody {
+  overflow: scroll;
 }
